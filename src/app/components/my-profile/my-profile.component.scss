@@ -1,0 +1,17 @@
+.profile-container {
+    display: inline-flex;
+    background-color: rgba(157, 224, 255, 0.6);
+    height: 150px;
+    width: 100%;
+    padding: 10px;
+
+    .greeting {
+        font-style: italic;
+    }
+
+    img {
+        height: 65px;
+        width: 65px;
+        padding-left: 10px;
+    }
+}

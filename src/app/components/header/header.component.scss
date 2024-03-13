@@ -1,0 +1,21 @@
+.header {
+    display: inline-flex;
+    height: 80px;
+    width: 100%;
+    padding: 10px;
+    // border-bottom: 3px cadetblue solid;
+    background-image: linear-gradient(to right, rgba(156, 39, 245, 0.6), rgba(39, 223, 245, 0.6));
+
+    .profile-pic {
+        height: 45px;
+        width: 45px;
+    }
+
+    .header-text {
+        font-style: italic;
+        font-size: 32px;
+        line-height: 36px;
+        margin: auto;
+        max-width: fit-content;
+    }
+}
