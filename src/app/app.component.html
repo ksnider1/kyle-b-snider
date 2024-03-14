@@ -1,4 +1,7 @@
 <div class="page-container">
   <app-header></app-header>
-  <app-my-profile></app-my-profile>
+  <app-my-profile (displayFullWeatherEvent)="displayFullWeather($event)"></app-my-profile>
+  <ng-container *ngIf="!!weatherConditions">
+    <app-weather-details-card [weatherDetails]="weatherConditions"></app-weather-details-card>
+  </ng-container>
 </div>

@@ -1,0 +1,17 @@
+<mat-card class="weather-details-container">
+    <mat-card-header>Full Weather Details</mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item><strong>Condition: </strong>{{ weatherDetails.WeatherText }}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><strong>Temperature: </strong>{{ weatherDetails.Temperature.Imperial.Value + '°F/' +
+                weatherDetails.Temperature.Metric.Value + '°C' }}</mat-list-item>
+            <ng-container *ngIf="weatherDetails.HasPrecipitation">
+                <mat-divider></mat-divider>
+                <mat-list-item><strong>Precipitation Type: </strong>{{ weatherDetails.PrecipitationType
+                    }}</mat-list-item>
+            </ng-container>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-footer>Weather provided by AccuWeather</mat-card-footer>
+</mat-card>

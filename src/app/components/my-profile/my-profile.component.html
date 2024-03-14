@@ -1,4 +1,24 @@
 <div class="profile-container">
-    <h1 class="greeting">{{ greeting }}, {{ currentDate | date }}</h1>
-    <img class="profile-pic" src="assets/images/storm.png">
+    <div class="greeting-container">
+        <h1 class="greeting">{{ greeting }}, {{ currentDate | date }}</h1>
+        <ng-container *ngIf="weatherFetched">
+            <img *ngIf="isSunny" src="assets/images/sun.png">
+            <img *ngIf="weatherConditions.HasPrecipitation" src="assets/images/rain.png">
+            <img *ngIf="!isSunny && !weatherConditions.HasPrecipitation" src="assets/images/clouds.png">
+            <img *ngIf="weatherConditions.Temperature.Imperial.Value <= 32" src="assets/images/cold.png">
+            <p>{{ displayFahrenheit ? weatherConditions.Temperature.Imperial.Value + '°F' :
+                weatherConditions.Temperature.Metric.Value + '°C' }}</p>
+        </ng-container>
+    </div>
+    <div class="button-container">
+        <button *ngIf="!weatherFetched; else option_buttons" mat-raised-button color="primary"
+            (click)="fetchCurrentConditions()">What's the
+            weather?</button>
+        <ng-template #option_buttons>
+            <button mat-raised-button color="primary" (click)="toggleTempUnit()">{{
+                tempUnitButtonLabel }}</button>
+            <button mat-raised-button color="accent" (click)="showHideFullWeather()">{{ showHide }} full weather
+                details</button>
+        </ng-template>
+    </div>
 </div>
