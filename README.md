@@ -1,7 +1,7 @@
 # Kyle B. Snider
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
-This is a simple page to display greeting based on time of day and allow user to fetch current weather conditions.
+This is a simple page to display greeting based on time of day and allow user to fetch current weather conditions for Columbus, OH.
 Image is displayed based on current conditions followed by the temperature (default F).
 User can toggle temperature unit as well as the full detail display.
 
